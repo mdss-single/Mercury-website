@@ -1,0 +1,296 @@
+/*  <fonts>  */
+@font-face
+	font-family 'HelveticaNeueCyr'
+	src url('../fonts/HelveticaNeueRegular.woff2') format('woff2'), url('../fonts/HelveticaNeueRegular.woff') format('woff')
+	font-weight normal
+	font-style normal
+@font-face
+	font-family 'HelveticaNeueCyr'
+	src url('../fonts/HelveticaNeueCyr-Bold.woff2') format('woff2'), url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff')
+	font-weight bold
+	font-style normal
+/*  </fonts>  */
+
+$font = 'HelveticaNeueCyr';
+$colorText = #777;
+
+/*  <general>  */
+html
+	font-size 62.5%
+	cursor default
+	-webkit-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+	-webkit-tap-highlight-color #000
+	text-rendering optimizeLegibility
+	-webkit-font-smoothing antialiased
+	font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+body
+	display flex
+	flex-direction column
+	min-height 100vh
+	color $colorText
+	font normal 1.4rem/1.6 $font
+	background-color #fff
+:-moz-placeholder
+	opacity 1
+	color currentColor
+:-ms-input-placeholder
+	opacity: 1
+	color currentColor
+a
+	color #5769A3
+	font inherit
+	text-decoration none
+	transition all .2s
+	&:hover
+		text-decoration underline
+img
+	max-width 100%
+.main
+	flex 1
+/*  </general>  */
+
+/*  <header>  */
+.header
+	flex-shrink 0
+	display flex
+	justify-content space-between
+	align-items center
+	margin 13px 0
+	&__logo
+		width 330px
+		margin-right 100px
+	&__slogan
+		width 150px
+		height 10px
+		background url('../i/slogan.svg') no-repeat
+	&__icons
+		flex 1
+		display flex
+		justify-content flex-end
+		align-items center
+		&-item
+			position relative
+			width 24px
+			height 24px
+			margin-left 60px
+			&::before
+				position absolute
+				top 50%
+				left -31px
+				width 1px
+				height 24px
+				background-color #5769A3
+				content ''
+				transform translateY(-50%)
+				pointer-events none
+			&:first-child
+				margin-left 0
+				&::before
+					display none
+			svg
+				width @width
+				height @width
+				fill #5769A3
+/*  </header>  */
+
+/*  <nav>  */
+.nav
+	background-color #5769A3
+	&-main
+		display flex
+		&__item
+			display flex
+			align-items center
+			position relative
+			height 75px
+			color #fff
+			font-size 2rem
+			text-transform uppercase
+			margin-right 46px
+			&:hover
+				text-decoration none
+				&::before
+					animation fadeIn .5s
+					position absolute
+					top 73px
+					left 0
+					width 100%
+					max-width 109px
+					height 2px
+					background-color #fff
+					content ''
+			&--sub
+				&:hover .nav-main__sub
+					display flex
+					flex-direction column
+					animation fadeIn .5s
+					position absolute
+					top 100%
+					left 0
+					z-index 3
+					width 256px
+					background-color #fff
+					box-shadow 0 3px 6px rgba(#000, .16)
+			&-sub
+				position relative
+				color #fff
+				font-size 2rem
+				padding-right 30px
+				a:hover&
+					text-decoration none
+				&::before
+					position absolute
+					top 50%
+					right 0
+					border solid transparent
+					border-width 5px 3.5px 0
+					border-top-color #fff
+					content ''
+					transform translateY(-50%)
+			&::after
+				position absolute
+				top 50%
+				right -23px
+				width 1px
+				height 24px
+				background-color #fff
+				content ''
+				transform translateY(-50%)
+				pointer-events none
+			&:last-child
+				margin-right 0
+				&::after
+					display none
+		&__sub
+			display none
+			&-item
+				display block
+				color #707070
+				font-size 2rem
+				text-transform none
+				padding 10px 32px 10px 49px
+				a:hover&
+					position relative
+					color #5769A3
+					text-decoration none
+					background-color #DBE0F4
+					&::after
+						position absolute
+						top 50%
+						right 27px
+						border solid transparent
+						border-width 3.5px 0 3.5px 5px
+						border-left-color #5769A3
+						content ''
+						transform translateY(-50%)
+/*  </nav>  */
+
+/*  <slider>  */
+.slider
+	&-item
+		position relative
+		width 100%
+		&__pic
+			position relative
+			height 624px
+			&::before
+				position absolute
+				top 0
+				right 0
+				bottom 0
+				left 0
+				background-color rgba(#00155A, .4)
+				content ''
+			img
+				object-fit cover
+		&__descr
+			position absolute
+			top 50%
+			left 50%
+			width 495px
+			color #fff
+			font-size 2.4rem
+			text-align center
+			transform translate(-50%, -50%)
+	&-down
+		animation sliderCirlce 2s infinite
+		position absolute
+		bottom 25px
+		left 50%
+		z-index 3
+		width 32px
+		height @width
+		border 1px solid #fff
+		border-radius 50%
+		transform translateX(-50%)
+		&::before
+			animation sliderArrow 2s infinite
+			position absolute
+			top 50%
+			left 50%
+			width 6px
+			height @width
+			border solid #fff
+			border-width 0 1px 1px 0
+			content ''
+			transform rotate(45deg) translateX(-75%)
+	.flickity-page-dots
+		bottom 75px
+		counter-reset section
+		.dot
+			position relative
+			width 48px
+			height 22px
+			background none
+			border-radius 0
+			margin 0 4px
+			opacity 1
+			&::before
+				position absolute
+				top 0
+				right 0
+				left 0
+				height 2px
+				background-color #fff
+				content ''
+			&::after
+				position absolute
+				bottom 0
+				left 50%
+				color #fff
+				font-size 1.2rem
+				line-height 1
+				transform translateX(-50%)
+				counter-increment section
+				content counter(section, decimal-leading-zero)
+			&.is-selected
+				&::before
+					background-color #465893
+				&::after
+					color #465893
+/*  </slider>  */
+
+/*  <animation>  */
+@keyframes fadeIn
+	from
+		opacity 0
+	to
+		opacity 1
+@keyframes sliderCirlce
+	from
+		border-color #fff
+	50%
+		border-color #465893
+	to
+		border-color #fff
+@keyframes sliderArrow
+	from
+		border-color #fff
+	50%
+		border-color #465893
+	to
+		border-color #fff
+/*  </animation>  */
