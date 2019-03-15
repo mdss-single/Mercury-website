@@ -1,17 +1,17 @@
 /*  <fonts>  */
 @font-face
-	font-family 'HelveticaNeueCyr'
-	src url('../fonts/HelveticaNeueRegular.woff2') format('woff2'), url('../fonts/HelveticaNeueRegular.woff') format('woff')
+	font-family 'Open Sans'
+	src url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.woff') format('woff')
 	font-weight normal
 	font-style normal
 @font-face
-	font-family 'HelveticaNeueCyr'
-	src url('../fonts/HelveticaNeueCyr-Bold.woff2') format('woff2'), url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff')
+	font-family 'Open Sans'
+	src url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff')
 	font-weight bold
 	font-style normal
 /*  </fonts>  */
 
-$font = 'HelveticaNeueCyr';
+$font = 'Open Sans';
 $colorText = #777;
 
 /*  <general>  */
@@ -272,6 +272,377 @@ img
 				&::after
 					color #465893
 /*  </slider>  */
+
+/*  <home-about-us>  */
+.home-about-us
+	max-width 826px
+	text-align center
+	margin 65px auto 48px
+	&__title
+		position relative
+		color #465893
+		font-weight bold
+		font-size 3rem
+		line-height 1
+		text-transform uppercase
+		padding-bottom 20px
+		&::after
+			position absolute
+			bottom 0
+			left 50%
+			width 74px
+			height 1px
+			background-color #465893
+			content ''
+			transform translateX(-50%)
+	&__descr
+		color #777
+		font-size 2.4rem
+		line-height 1
+		margin 50px 0
+	&__notice
+		font-size 1.4rem
+		line-height 1
+		margin 50px 0
+	&__btn
+		display flex
+		justify-content center
+/*  </home-about-us>  */
+
+/*  <home-products>  */
+.home-products
+	background-color #E8E8E8
+	padding 55px 0
+	&__title
+		position relative
+		color #465893
+		font-weight bold
+		font-size 2.4rem
+		line-height 1
+		text-transform uppercase
+		text-align center
+		padding-bottom 20px
+		margin-bottom 45px
+		&::after
+			position absolute
+			bottom 0
+			left 50%
+			width 74px
+			height 1px
+			background-color #465893
+			content ''
+			transform translateX(-50%)
+	&__items
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		margin 0 -25px
+	&__item
+		display flex
+		flex-direction column
+		align-items center
+		width calc(20% - 25px)
+		&-pic
+			display flex
+			justify-content center
+			align-items center
+			overflow hidden
+			position relative
+			width 154px
+			height 154px
+			border-radius 50%
+			margin-bottom 22px
+			&::after
+				position absolute
+				top 0
+				right 0
+				bottom 0
+				left 0
+				background-color rgba(#465893, .3)
+				content ''
+				pointer-events none
+			img
+				object-fit cover
+		&-name
+			color #777
+			font-size 2rem
+			text-decoration underline
+			text-decoration-style dotted
+			a:hover&
+				text-decoration none
+/*  </home-products>  */
+
+/*  <home-advantage>  */
+.home-advantage
+	padding 55px 0
+	&__title
+		position relative
+		color #465893
+		font-weight bold
+		font-size 2.4rem
+		line-height 1
+		text-transform uppercase
+		text-align center
+		padding-bottom 20px
+		margin-bottom 45px
+		&::after
+			position absolute
+			bottom 0
+			left 50%
+			width 74px
+			height 1px
+			background-color #465893
+			content ''
+			transform translateX(-50%)
+	&__items
+		display flex
+		justify-content space-between
+		margin 0 -8px
+	&__item
+		width calc(20% - 8px)
+		text-align center
+		margin 0 8px
+		&-icon
+			display flex
+			justify-content center
+			align-items center
+			img
+				max-height 100%
+		&-name
+			position relative
+			color #465893
+			font-size 1.6rem
+			line-height 1
+			text-transform uppercase
+			padding-bottom 15px
+			margin-top 12px
+			span
+				display block
+			&::after
+				position absolute
+				bottom 0
+				left 50%
+				width 70px
+				height 1px
+				background-color #465893
+				content ''
+				transform translateX(-50%)
+		&-descr
+			color #777
+			font-size 1.6rem
+			margin-top 18px
+/*  </home-advantage>  */
+
+/*  <home-stat>  */
+.home-stat
+	background-color #00155A
+	padding 36px 0
+	&__title
+		position relative
+		width 220px
+		color #fff
+		font-weight bold
+		font-size 2.1rem
+		line-height 2.6rem
+		text-align center
+		padding-bottom 20px
+		margin 0 auto 44px
+		&::after
+			position absolute
+			bottom 0
+			left 50%
+			width 70px
+			height 1px
+			background-color #fff
+			content ''
+			transform translateX(-50%)
+	&__items
+		display flex
+		justify-content space-between
+	&__item
+		color #fff
+		font-size 1.6rem
+		line-height 1.2
+		text-align center
+		span
+			display block
+			font-size 4rem
+/*  </home-stat>  */
+
+/*  <send-message>  */
+.send-message
+	background-color #E8E8E8
+	padding 46px 0 52px
+	&__title
+		color #777
+		font-size 2.1rem
+		text-transform uppercase
+		text-align center
+		margin-bottom 35px
+	&__form
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		max-width 464px
+		margin auto
+		&-input
+			position relative
+			width calc(50% - 22px)
+			input
+				width 100%
+				height 40px
+				color #777
+				font-size 1.4rem
+				background-color transparent
+				border 0
+				border-bottom 1px solid #A7A7A7
+				padding 0 3px
+				& + label
+					position absolute
+					top 50%
+					left 3px
+					color #A7A7A7
+					font-size 1.4rem
+					transform translateY(-50%)
+					transition all .2s
+					pointer-events none
+				&:focus + label
+					top 0
+				&:not(:placeholder-shown) + label
+					top 0
+				&:required:not(:placeholder-shown)
+					border-bottom-color #f00
+					box-shadow none
+		&-textarea
+			width 100%
+			height 94px
+			color #777
+			font-size 1.4rem
+			background-color #fff
+			border 0
+			padding 12px 15px
+			margin-top 30px
+			resize none
+		&-submit
+			display flex
+			justify-content center
+			width 100%
+			margin-top 55px
+/*  <send-message>  */
+
+/*  <footer>  */
+.footer
+	overflow hidden
+	color #fff
+	background-color #1F1F1F
+	padding 50px 0 30px
+	&-general
+		display flex
+		justify-content center
+		font-size 1.4rem
+		line-height 1
+		margin-bottom 38px
+		a
+			display flex
+			align-items center
+			color #fff
+		svg
+			fill #fff
+			margin-right 11px
+		&__phone
+			position relative
+			margin-right 77px
+			&::after
+				position absolute
+				top 50%
+				right -38px
+				width 1px
+				height 17px
+				background-color #fff
+				content ''
+				transform translateY(-50%)
+			svg
+				width 24px
+				height 24px
+		&__email
+			svg
+				width 24px
+				height 17px
+	&-nav
+		text-align center
+		margin-bottom 22px
+		&__item
+			position relative
+			color #fff
+			font-size 1.6rem
+			line-height 1.8rem
+			text-transform uppercase
+			margin-right 40px
+			&::after
+				position absolute
+				top 50%
+				right -20px
+				width 1px
+				height 14px
+				background-color #fff
+				content ''
+				transform translateY(-50%)
+			&:last-child
+				margin-right 0
+				&::after
+					display none
+	&-info
+		max-width 344px
+		font-size 1.4rem
+		line-height 2rem
+		text-align center
+		margin 0 auto 40px
+		p
+			margin 0
+	&-copyright
+		position relative
+		font-size 1.2rem
+		text-align center
+		padding-top 28px
+		&::before
+			position absolute
+			top 0
+			width 2000%
+			height 1px
+			background-color #707070
+			content ''
+		&::before
+			left -1000%
+/*  </footer>  */
+
+/*  <elements>  */
+.btn
+	display flex
+	justify-content center
+	align-items center
+	width 200px
+	height 40px
+	font-size 1.4rem
+	padding 0 10px
+	cursor pointer
+	transition all .2s
+	a:hover&
+		text-decoration none
+	&--blue
+		color #fff
+		background-color #465893
+		border 0
+		&:hover
+			background-color darken(#465893, 5)
+	&--white
+		color #777
+		background-color #fff
+		border 1px solid #777
+		&:hover
+			color darken(#777, 10)
+			border-color @color
+			box-shadow inset 0 0 10px rgba(#000, .2)
+/*  </elements>  */
 
 /*  <animation>  */
 @keyframes fadeIn

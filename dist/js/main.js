@@ -3,10 +3,11 @@ window.addEventListener('load', function() {
 		cellSelector: '.slider-item',
 		autoPlay: 5000,
 		fade: true,
+		wrapAround: true,
 		prevNextButtons: false
 	});
 
-	document.querySelector('.js-slideToDown').addEventListener('click', function(e) {
+	document.querySelector('.js-smoothscroll').addEventListener('click', function(e) {
 		e.preventDefault();
 		document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
 	});
