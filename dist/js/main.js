@@ -1,27 +1,50 @@
 window.addEventListener('load', function() {
-	var flky = new Flickity( '.js-slider', {
-		cellSelector: '.slider-item',
-		autoPlay: 5000,
-		fade: true,
-		wrapAround: true,
-		prevNextButtons: false
-	});
 
-	document.querySelector('.js-smoothscroll').addEventListener('click', function(e) {
+	// modal send message
+	document.querySelector('.js-modal-send').addEventListener('click', function(e) {
 		e.preventDefault();
-		document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+		e.stopPropagation();
+		document.querySelector('.modal-send').classList.add('modal-send--active');
 	});
-});
+	document.addEventListener('click', function (e) {
+		var el = e.target.closest('.modal-send');
+		if (!el) {
+			document.querySelector('.modal-send').classList.remove('modal-send--active');
+		}
+	});
+	document.querySelector('.js-modal-send-close').addEventListener('click', function() {
+		document.querySelector('.modal-send').classList.remove('modal-send--active');
+	});
 
-function showMenu() {
-	if (!$('.nav__cover').length) $('body').prepend('<div class="nav__cover"></div>');
-	$('html').addClass('no-scroll');
-	$('.nav__main').addClass('nav__main--active');
-}
-function hideMenu() {
-	if ($('html').hasClass('no-scroll')) $('html').removeClass('no-scroll');
-	if ($('.nav__cover').length) {
-		$('.nav__cover').remove();
+	// show hidden menu on mobile device
+	document.querySelector('.js-menu').addEventListener('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		showMenu();
+	});
+	document.querySelector('.js-nav-close').addEventListener('click', function(e) {
+		e.preventDefault();
+		hideMenu();
+	});
+	document.addEventListener('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var el = e.target.closest('.nav-main');
+		if (!el) {
+			hideMenu();
+		}
+	});
+
+	function showMenu() {
+		var cover = document.createElement('div');
+		cover.classList.add('nav__cover');
+		document.querySelector('body').prepend(cover);
+		document.querySelector('html').classList.add('no-scroll');
+		document.querySelector('.nav-main').classList.add('nav-main--active');
 	}
-	$('.nav__main').removeClass('nav__main--active');
-}
+	function hideMenu() {
+		document.querySelector('html').classList.remove('no-scroll');
+		document.querySelector('.nav__cover').remove();
+		document.querySelector('.nav-main').classList.remove('nav-main--active');
+	}
+});
