@@ -266,7 +266,6 @@ img
 				a:hover&
 					text-decoration none
 				&::before
-					animation thrill 2s infinite
 					position absolute
 					top 50%
 					right 0
@@ -311,6 +310,7 @@ img
 					text-decoration none
 					background-color #DBE0F4
 					&::after
+						animation thrill .5s infinite
 						position absolute
 						top 50%
 						right 27px
@@ -1233,9 +1233,9 @@ img
 		border-color #fff
 @keyframes thrill
 	from
-		margin-left 0
+		right 27px
 	50%
-		margin-left 4px
+		right 30px
 	to
-		margin-left 0
+		right 27px
 /*  </animation>  */
