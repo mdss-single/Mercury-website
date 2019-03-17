@@ -16,7 +16,23 @@ window.addEventListener('load', function() {
 		document.querySelector('.modal-send').classList.remove('modal-send--active');
 	});
 
-	// show hidden menu on mobile device
+	// modal phone us
+	document.querySelector('.js-modal-phone').addEventListener('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		document.querySelector('.modal-phone').classList.add('modal-phone--active');
+	});
+	document.addEventListener('click', function (e) {
+		var el = e.target.closest('.modal-phone');
+		if (!el) {
+			document.querySelector('.modal-phone').classList.remove('modal-phone--active');
+		}
+	});
+	document.querySelector('.js-modal-phone-close').addEventListener('click', function() {
+		document.querySelector('.modal-phone').classList.remove('modal-phone--active');
+	});
+
+	// show left menu on mobile device
 	document.querySelector('.js-menu').addEventListener('click', function(e) {
 		e.preventDefault();
 		e.stopPropagation();

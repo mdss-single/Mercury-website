@@ -10,40 +10,40 @@
 	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
+	<div class="homepage-top">
 		<header class="header">
-			<a href="#" class="header__logo"><img src="i/logo.svg" alt=""></a>
-			<div class="header__slogan"></div>
-			<div class="header__icons">
-				<a href="tel:+3727168899" class="header__icons-item"><svg><use xlink:href="#icon-phone"></use></svg></a>
-				<a href="#" class="header__icons-item js-modal-send"><svg><use xlink:href="#icon-email"></use></svg></a>
+			<div class="container">
+				<a href="#" class="header__logo"><img src="i/logo.svg" alt=""></a>
+				<div class="header__slogan"></div>
+				<div class="header__icons">
+					<a href="tel:+3727168899" class="header__icons-item js-modal-phone"><svg><use xlink:href="#icon-phone"></use></svg></a>
+					<a href="#" class="header__icons-item js-modal-send"><svg><use xlink:href="#icon-email"></use></svg></a>
+				</div>
 			</div>
 		</header>
-	</div>
-	<nav class="nav">
-		<div class="container">
-			<a href="#" class="nav-menu js-menu"><span data-text="Show Menu"></span></a>
-			<div class="nav-main">
-				<a href="#" class="nav-main__close js-nav-close"></a>
-				<div class="nav-main__item nav-main__item--sub nav-main__item--active">
-					<a href="#" class="nav-main__item-sub">Products</a>
-					<div class="nav-main__sub">
-						<a href="#" class="nav-main__sub-item">Silicon metal</a>
-						<a href="#" class="nav-main__sub-item">Microsilica</a>
-						<a href="#" class="nav-main__sub-item">Magnesium</a>
-						<a href="#" class="nav-main__sub-item">Stainless steel</a>
-						<a href="#" class="nav-main__sub-item">Polyethylene foam</a>
+		<nav class="nav">
+			<div class="container">
+				<a href="#" class="nav-menu js-menu"><span data-text="Show Menu"></span></a>
+				<div class="nav-main">
+					<a href="#" class="nav-main__close js-nav-close"></a>
+					<div class="nav-main__item nav-main__item--sub nav-main__item--active">
+						<a href="#" class="nav-main__item-sub">Products</a>
+						<div class="nav-main__sub">
+							<a href="#" class="nav-main__sub-item">Silicon metal</a>
+							<a href="#" class="nav-main__sub-item">Microsilica</a>
+							<a href="#" class="nav-main__sub-item">Magnesium</a>
+							<a href="#" class="nav-main__sub-item">Stainless steel</a>
+							<a href="#" class="nav-main__sub-item">Polyethylene foam</a>
+						</div>
 					</div>
+					<a href="#" class="nav-main__item">Services</a>
+					<a href="#" class="nav-main__item">Markets</a>
+					<a href="#" class="nav-main__item">About us</a>
+					<a href="#" class="nav-main__item">Contacts</a>
 				</div>
-				<a href="#" class="nav-main__item">Services</a>
-				<a href="#" class="nav-main__item">Markets</a>
-				<a href="#" class="nav-main__item">About us</a>
-				<a href="#" class="nav-main__item">Contacts</a>
 			</div>
-		</div>
-	</nav>
-	<main class="main">
-		<div class="slider" data-flickity='{ "cellSelector": ".slider-item", "autoPlay": 5000, "fade": true, "wrapAround": true, "prevNextButtons": false }'>
+		</nav>
+		<div class="slider" data-flickity='{ "resize": false, "cellSelector": ".slider-item", "fade": true, "wrapAround": true, "prevNextButtons": false }'>
 			<div class="slider-item">
 				<div class="slider-item__pic">
 					<img src="i/slider/1.jpg" alt="">
@@ -73,6 +73,8 @@
 			</div>
 			<a href="#aboutUs" class="slider-down js-smoothscoll"></a>
 		</div>
+	</div>
+	<main class="main">
 		<div class="home-about-us" id="aboutUs">
 			<div class="container">
 				<div class="home-about-us__title">МЕRCURY CORPORATION</div>
@@ -249,6 +251,18 @@
 					</div>
 				</div>
 			</form>
+		</div>
+	</div>
+	<div class="modal-phone">
+		<div class="container">
+			<a href="#" class="modal-phone__close js-modal-phone-close" title="Закрыть"></a>
+			<div class="modal-phone__title">PHONE US MESSAGE</div>
+			<div class="modal-phone__text">
+				Мы работаем для Вас 24 часа в сутки, 7 дней в неделю
+			</div>
+			<div class="modal-phone__number">
+				<a href="tel:+3727168899">+372 71 688 99</a>
+			</div>
 		</div>
 	</div>
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
